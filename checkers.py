@@ -16,7 +16,11 @@ chWin.setCoords(0,0, sqSz * 10, sqSz * 10)
 
 for m in range(8):
     for i in range(8):
-        draw_sq(sqSz * (i + 1), sqSz * (m + 1) , "red", sqSz, chWin)
+        if (i + m) % 2 == 0:
+            sqCol = "red"
+        else:
+            sqCol = "black"
+        draw_sq(sqSz * (i + 1), sqSz * (m + 1) , sqCol, sqSz, chWin)
 
 chWin.getMouse()
 chWin.close()
